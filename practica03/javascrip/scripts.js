@@ -126,3 +126,30 @@ function validarNumero(e, entrada){
         return false; 
     } 
 };
+
+function validarLetra(e, entrada) {
+    var key = window.event ? e.keyCode : e.which;
+    if((65 <= key && key <= 90) || (97 <= key && key <= 122) ){ 
+        if(entrada.id == 'nombres' && entrada.value.length){
+            document.getElementById("msjNombres").innerHTML = ''
+        }
+        
+        if(entrada.id == 'apellidos' && entrada.value.length){
+            document.getElementById("msjApellidos").innerHTML = ''
+        }
+        return true; 
+    }else{ 
+        var mensaje = "Ingrese únicamente letras"
+        if(entrada.id == 'nombres' && entrada.value.length){
+            document.getElementById("msjNombres").innerHTML = mensaje
+            document.getElementById("msjNombres").style.color = 'orange'
+        }
+        
+        if(entrada.id == 'apellidos' && entrada.value.length){
+            document.getElementById("msjApellidos").innerHTML = mensaje
+            document.getElementById("msjApellidos").style.color = 'orange'
+        }
+        return false; 
+    } 
+
+};
