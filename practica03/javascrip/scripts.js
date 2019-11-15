@@ -100,11 +100,29 @@ function validarCamposObligatorios() {
     }
 }
 
-function validarNumero(e, fono){
+function validarNumero(e, entrada){
     var key = window.event ? e.keyCode : e.which;
-    if(((48 <= key && key <= 57) || (key == 0) || (key == 8)) && fono.value.length < 10){ 
+    if(((48 <= key && key <= 57) || (key == 0) || (key == 8)) && entrada.value.length < 10){ 
+        if(entrada.id == 'cedula'){
+            document.getElementById("msjCedula").innerHTML = ''
+        }
+        
+        if(entrada.id == 'telefono'){
+            document.getElementById("msjTelefono").innerHTML = ''
+        }
         return true; 
     }else{
+        var mensaje = "Ingrese únicamente números"
+        if(entrada.id == 'cedula' && entrada.value.length < 10){
+            document.getElementById("msjCedula").innerHTML = mensaje
+            document.getElementById("msjCedula").style.color = 'orange'
+        }
+        
+        if(entrada.id == 'telefono' && entrada.value.length < 10){
+            document.getElementById("msjTelefono").innerHTML = mensaje
+            document.getElementById("msjTelefono").style.color = 'orange'
+        }
+        
         return false; 
     } 
 };
