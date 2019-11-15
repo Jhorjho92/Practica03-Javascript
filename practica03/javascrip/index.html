@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link type="text/css" href="estilos.css" rel="stylesheet" >
+    <script type="text/javascript" src="scripts.js"></script>
+    <title>Formuario</title>
 </head>
 <body>
-    
+    <header>
+
+    </header>
+    <form class="miFormulario" method="POST" action="" onsubmit="return validarCamposObligatorios()">
+        <h2>Datos Usuario</h2>
+        
+        <label for="cedula">Cédula:</label>
+        <span id="msjCedula"></span>
+        <input type="text" placeholder="Cédula(*)" name="cedula" id="cedula" onchange="return validarCedula(this)">
+        
+        <label for="nombres" >Nombres:</label>
+        <span id="msjNombres"></span>
+        <input type="text" placeholder="Nombres(*)" name="nombres" id="nombres" onkeypress="return validarLetra(event)">
+        
+        <label for="apellidos" >Apellidos:</label>
+        <span id="msjApellidos"></span>
+        <input type="text" placeholder="Apellidos(*)" name="apellidos" id="apellidos" onkeypress="return validarLetra(event)">
+        
+        <label for="direccion">Dirección:</label>
+        <span id="msjDireccion"></span>
+        <input type="text" placeholder="Dirección(*)" name="direccion" id="direccion">
+        
+        <label for="telefono" >Telefono:</label>
+        <input type="text" placeholder="Telefono(*)" name="telefono" id="telefono" onkeypress="return validarNumero(event, this)" > <!-- onkeyup="return cantNumTelefono(this)"-->
+        
+        <label for="fechaNacimiento">Fecha Nacimiento:</label>
+        <span id="msjFechaNac"></span>
+        <input type="text" placeholder="Fecha Nacimiento" name="fechaNacimiento" id="fechaNacimiento">
+        
+        <label for="mail" >Correo Electronico:</label>
+        <span id="msjMail"></span>
+        <input type="text" placeholder="E-mail(*)" name="mail" id="mail" onchange="return validarEmail(this)">
+        
+        <label for="password1" >Contraseña:</label>
+        <span id="msjPassword1"></span>
+        <input type="text" placeholder="Contraseña(*)" name="password1" id="password1">
+        
+        <label for="password2" >Confirme Contraseña</label>
+        <span id="msjPassword2"></span>
+        <input type="text" placeholder="Contraseña Confirmación (*)" name="password2" id="password2">
+        
+        <input type="submit" value="Agregar" name="agregar" id="agregar">
+        <input type="reset" value="Cancelar" name="cancelar" id="cancelar">
+    </form>
+    <footer>
+
+    </footer>
 </body>
 </html>
