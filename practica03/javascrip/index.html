@@ -32,10 +32,11 @@
         <input type="text" placeholder="Dirección(*)" name="direccion" id="direccion">
         
         <label for="telefono" >Telefono:</label>
+        <span id="msjTelefono"></span>
         <input type="text" placeholder="Telefono(*)" name="telefono" id="telefono" onkeypress="return validarNumero(event, this)" > <!-- onkeyup="return cantNumTelefono(this)"-->
         
         <label for="fechaNacimiento">Fecha Nacimiento:</label>
-        <span id="msjFechaNac"></span>
+        <span id="msjFechaNacimiento"></span>
         <input type="text" placeholder="Fecha Nacimiento" name="fechaNacimiento" id="fechaNacimiento">
         
         <label for="mail" >Correo Electronico:</label>
@@ -50,8 +51,8 @@
         <span id="msjPassword2"></span>
         <input type="text" placeholder="Contraseña Confirmación (*)" name="password2" id="password2">
         
-        <input type="submit" value="Agregar" name="agregar" id="agregar">
-        <input type="reset" value="Cancelar" name="cancelar" id="cancelar">
+        <input type="submit" value="Agregar" name="agregar" id="agregar" class="botones">
+        <input type="reset" value="Cancelar" name="cancelar" id="cancelar" class="botones">
     </form>
     <footer>
 
