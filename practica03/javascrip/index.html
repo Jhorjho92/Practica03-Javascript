@@ -17,7 +17,7 @@
         
         <label for="cedula">Cédula:</label>
         <span id="msjCedula"></span>
-        <input type="text" placeholder="Cédula(*)" name="cedula" id="cedula" onchange="return validarCedula(this)">
+        <input type="text" placeholder="Cédula(*)" name="cedula" id="cedula" onchange="return validarCedula(this)" onkeypress="return validarNumero(event, this)">
         
         <label for="nombres" >Nombres:</label>
         <span id="msjNombres"></span>
@@ -33,7 +33,7 @@
         
         <label for="telefono" >Telefono:</label>
         <span id="msjTelefono"></span>
-        <input type="text" placeholder="Telefono(*)" name="telefono" id="telefono" onkeypress="return validarNumero(event, this)" > <!-- onkeyup="return cantNumTelefono(this)"-->
+        <input type="text" placeholder="Telefono(*)" name="telefono" id="telefono" onkeypress="return validarNumero(event, this)" >
         
         <label for="fechaNacimiento">Fecha Nacimiento:</label>
         <span id="msjFechaNacimiento"></span>
