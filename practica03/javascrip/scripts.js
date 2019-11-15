@@ -91,7 +91,7 @@ function validarCamposObligatorios() {
         }
 
     }
-        
+
     if (!bandera) { 
         alert(' CAMPOS VACIOS! Rellenar los campos')
         return false;
@@ -99,3 +99,12 @@ function validarCamposObligatorios() {
         return true;
     }
 }
+
+function validarNumero(e, fono){
+    var key = window.event ? e.keyCode : e.which;
+    if(((48 <= key && key <= 57) || (key == 0) || (key == 8)) && fono.value.length < 10){ 
+        return true; 
+    }else{
+        return false; 
+    } 
+};
