@@ -37,7 +37,7 @@
         
         <label for="fechaNacimiento">Fecha Nacimiento:</label>
         <span id="msjFechaNacimiento"></span>
-        <input type="text" placeholder="Fecha Nacimiento" name="fechaNacimiento" id="fechaNacimiento">
+        <input type="text" placeholder="Fecha Nacimiento (dd/mm/yyyy)" name="fechaNacimiento" id="fechaNacimiento" onkeypress="return validarFecha(event, this)">
         
         <label for="mail" >Correo Electronico:</label>
         <span id="msjMail"></span>

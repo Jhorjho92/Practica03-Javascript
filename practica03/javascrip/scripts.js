@@ -92,7 +92,7 @@ function validarCamposObligatorios() {
 
     }
 
-    if (!bandera) { 
+    if (!bandera){ 
         alert(' CAMPOS VACIOS! Rellenar los campos')
         return false;
     } else {
@@ -129,7 +129,7 @@ function validarNumero(e, entrada){
 
 function validarLetra(e, entrada) {
     var key = window.event ? e.keyCode : e.which;
-    if((65 <= key && key <= 90) || (97 <= key && key <= 122) ){ 
+    if((65 <= key && key <= 90) || (97 <= key && key <= 122) || (key == 32) ){ 
         if(entrada.id == 'nombres' && entrada.value.length){
             document.getElementById("msjNombres").innerHTML = ''
         }
@@ -153,3 +153,52 @@ function validarLetra(e, entrada) {
     } 
 
 };
+
+function validarFecha(e, inputText) {
+    
+    var key = window.event ? e.keyCode : e.which;
+    var n = inputText.value.length;
+    if(((48 <= key && key <= 57) || (key == 0) || (key == 8)) && (n != 3 && n != 6)){ 
+        
+        if(inputText.id == 'fechaNacimiento'){
+            document.getElementById("msjFechaNacimiento").innerHTML = ''
+        }
+        
+        return true; 
+    }else{
+        
+        var mensaje = "Formato no válido. (dd/mm/yyy) 01/16/1992"
+        if((n == 3 || n == 6)&& key == 42){
+            if(inputText.id == 'fechaNacimiento'){
+                document.getElementById("msjFechaNacimiento").innerHTML = ''
+            }
+            return true;
+        }elseif (inputText.id == 'fechaNacimiento' && inputText.value.length < 10){
+            document.getElementById("msjFechaNacimiento").innerHTML = mensaje
+            document.getElementById("msjFechaNacimiento")
+            document.getElementById("msjFechaNacimiento").style.color = 'orange'
+            return false; 
+        }
+    
+    }
+
+};
+
+
+/*function validarEmail(mail){
+    var arroba = mail.value.indexOf("@");
+    if( arroba ==-1 ){
+        document.getElementById("msjEmail").innerHTML= 'correo inválido sin @'
+    }else{
+        var dominio = mail.value.substring(arroba, mail.value.length)
+        var idMail = mail.value.substring(0, arroba)
+        if((dominio != "@ups.edu.ec" && dominio != "@est.ups.edu.ec")){    
+            document.getElementById("msjEmail").innerHTML= 'El dominio debe de ser: @est.ups.edu.ec ó @ups.edu.ec'
+        }else if(idMail.length < 3){
+            document.getElementById("msjEmail").innerHTML= 'Nombre de usuario menor a 3 caractéres.'
+        }else{
+            document.getElementById("msjEmail").innerHTML= ''
+        }
+    }
+
+};*/
